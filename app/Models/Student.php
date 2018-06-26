@@ -8,13 +8,17 @@ class Student extends Model
 {
 
     protected $fillable = [
-        'name', 'registration', 'semester', 'status'
+        'name', 'course_id', 'registration', 'semester', 'status'
     ];
 
-    public function courses()
+    public function scopeSearch($query)
     {
-        return $this->belongsToMany(Course::class, 'student_courses', 'student_id', 'course_id')
-            ->withTimestamps();
+        return empty(request()->search) ? $query : $query->where('name', 'like', '%' . request()->search . '%');
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class, 'course_id');
     }
 
 }

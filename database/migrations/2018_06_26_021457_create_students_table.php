@@ -17,10 +17,15 @@ class CreateStudentsTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('name');
+            $table->unsignedBigInteger('course_id');
             $table->integer('registration');
             $table->integer('semester');
             $table->enum('status', ['matriculado', 'trancado', 'jubilado']);
             $table->timestamps();
+
+            $table->foreign('course_id')
+                ->references('id')->on('courses')
+                ->onDelete('cascade');
         });
     }
 

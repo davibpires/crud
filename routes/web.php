@@ -12,3 +12,9 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'SiteController@index']);
+
+// Students
+Route::resource('students', 'StudentController');
+
+// Courses
+Route::resource('courses', 'CourseController');
