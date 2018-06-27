@@ -6,9 +6,9 @@
         <div class="col-sm-12 col-md-6 col-lg-5 offset-md-1 offset-lg-1">
             @include('reuse.errors')
 
-            {!! Form::model($student, ['route' => ['students.update', $student->id], 'method' => 'put']) !!}
+            {!! Form::model($course, ['route' => ['courses.update', $course->id], 'method' => 'put']) !!}
 
-                @include('student._form')
+                @include('courses._form')
 
                 <!--- Submit Form Button --->
                 <div class="form-group mt-4 center">
@@ -18,5 +18,5 @@
             {!! Form::close() !!}
         </div>
     </div>
-
+    
 @stop

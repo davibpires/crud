@@ -13,7 +13,10 @@
     {{ Html::style('css/bootstrap/bootstrap.min.css') }}
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    {{ Html::style('https://use.fontawesome.com/releases/v5.1.0/css/all.css', ['integrity' => 'sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt', 'crossorigin' => 'anonymous']) }}
+
+    <!-- DataTables -->
+    {{ Html::style('https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css') }}
 
     <!-- Theme style -->
     {{ Html::style('css/adminlte/adminlte.min.css') }}
@@ -44,8 +47,15 @@
     <!-- Bootstrap -->
     {{ Html::script('js/bootstrap/bootstrap.bundle.min.js') }}
 
+    <!-- DataTables -->
+    {{ Html::script('https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js') }}
+    {{ Html::script('https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js') }}
+
     <!-- AdminLTE App -->
     {{ Html::script('js/adminlte/adminlte.min.js') }}
+
+    <!-- My jQuery -->
+    {{ Html::script('js/custom.js') }}
 
     @yield('js')
 

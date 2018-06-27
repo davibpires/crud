@@ -11,6 +11,11 @@ class Course extends Model
         'code', 'name', 'institution'
     ];
 
+    public function scopeSearch($query)
+    {
+        return empty(request()->search) ? $query : $query->where('name', 'like', '%' . request()->search . '%');
+    }
+
     public function students()
     {
         return $this->hasMany(Student::class, 'course_id');

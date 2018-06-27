@@ -15,6 +15,8 @@ Route::get('/', ['as' => 'home', 'uses' => 'SiteController@index']);
 
 // Students
 Route::resource('students', 'StudentController');
+Route::get('students/{student}/delete', ['as' => 'students.delete', 'uses' => 'StudentController@delete']);
 
 // Courses
 Route::resource('courses', 'CourseController');
+Route::get('courses/{course}/delete', ['as' => 'courses.delete', 'uses' => 'CourseController@delete']);

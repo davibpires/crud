@@ -13,7 +13,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <div class="content-header pb-1">
+            <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
@@ -21,10 +21,10 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li><a href="{{ url('') }}"><i class="fas fa-home"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{ url('') }}"><i class="fas fa-home"></i> Home</a></li>
                                 @if (isset($breadcrumbs))
                                     @foreach($breadcrumbs as $key => $value)
-                                        <li class="breadcrumb-item @if($loop->last) active @endif">@if ($value != '')<a href="{{ url($value) }}">{{ $key }}</a>@else {{ $key }} @endif</li>
+                                        <li class="breadcrumb-item pl-0 @if ($loop->last) active @endif">@if ($value != '')<a href="{{ route($value) }}">{{ $key }}</a>@else{{ $key }}@endif</li>
                                     @endforeach
                                 @endif
                             </ol>
