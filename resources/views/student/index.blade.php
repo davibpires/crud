@@ -10,6 +10,8 @@
                     {{ session('success') }}
                 </div>
             @endif
+
+            @include('reuse.errors')
         </div>
 
         <div class="col-12 mb-3 center">

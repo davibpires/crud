@@ -6,7 +6,7 @@
         <div class="col-sm-12 col-md-6 col-lg-5 offset-md-1 offset-lg-1">
             <div class="card">
                 <div class="card-body">
-                    <strong><i class="fas fa-map-pin mr-1"></i> Código</strong>
+                    <strong><i class="fas fa-list-ol mr-1"></i> Código</strong>
                     <p class="text-muted">{{ $course->code }}</p>
 
                     <hr>
@@ -47,7 +47,7 @@
                             </tr>
                             @foreach($course->students as $student)
                                 <tr>
-                                    <td>{{ $student->name}}</td>
+                                    <td><a href="{{ route('students.show', ['student' => $student->id]) }}">{{ $student->name}}</a></td>
                                     <td>{{ ucfirst($student->status) }}</td>
                                 </tr>
                             @endforeach

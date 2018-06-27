@@ -27,27 +27,31 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body table-responsive p-0">
-                    <table class="table table-hover">
-                        <tr>
-                            <th>ID</th>
-                            <th>Código</th>
-                            <th>Nome</th>
-                            <th>Instituição</th>
-                            <th>Ações</th>
-                        </tr>
-                        @foreach($courses as $course)
+                    @if ($courses->count() == 0)
+                        <h5 class="mt-4 mb-4 center">Sem cursos</h5>
+                    @else
+                        <table class="table table-hover">
                             <tr>
-                                <td>{{ $course->id }}</td>
-                                <td>{{ $course->code }}</td>
-                                <td><a href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->name }}</a></td>
-                                <td>{{ $course->institution }}</td>
-                                <td>
-                                    <a href="{{ route('courses.edit', ['course' => $course->id]) }}" class="pr-1"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="{{ route('courses.delete', ['course' => $course->id]) }}" class="pl-1"><i class="fas fa-trash text-red" style="color: tomato;"></i></a>
-                                </td>
+                                <th>ID</th>
+                                <th>Código</th>
+                                <th>Nome</th>
+                                <th>Instituição</th>
+                                <th>Ações</th>
                             </tr>
-                        @endforeach
-                    </table>
+                            @foreach($courses as $course)
+                                <tr>
+                                    <td>{{ $course->id }}</td>
+                                    <td>{{ $course->code }}</td>
+                                    <td><a href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->name }}</a></td>
+                                    <td>{{ $course->institution }}</td>
+                                    <td>
+                                        <a href="{{ route('courses.edit', ['course' => $course->id]) }}" class="pr-1"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="{{ route('courses.delete', ['course' => $course->id]) }}" class="pl-1"><i class="fas fa-trash text-red" style="color: tomato;"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    @endif
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">

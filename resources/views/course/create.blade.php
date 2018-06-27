@@ -8,7 +8,7 @@
 
             {!! Form::open(['route' => 'courses.store', 'method' => 'post']) !!}
 
-                @include('courses._form')
+                @include('course._form')
 
                 <!--- Submit Form Button --->
                 <div class="form-group mt-4 center">

@@ -29,6 +29,9 @@ class StudentController extends Controller
 
     public function create()
     {
+        if (Course::count() == 0)
+            return back()->withErrors("Nenhum curso cadastrado. Cadastre algum curso para adicionar estudantes.");
+
         $pageTitle = 'Adicionar Estudante';
         $breadcrumbs = ['Estudantes' => 'students.index', 'Novo' => ''];
 

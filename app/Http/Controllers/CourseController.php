@@ -24,7 +24,7 @@ class CourseController extends Controller
 
         $courses = $this->courses->search()->orderBy('name')->paginate(15);
 
-        return view('courses.index', compact(['courses', 'search', 'pageTitle', 'breadcrumbs']));
+        return view('course.index', compact(['courses', 'search', 'pageTitle', 'breadcrumbs']));
     }
 
     public function create()
@@ -32,7 +32,7 @@ class CourseController extends Controller
         $pageTitle = 'Adicionar Curso';
         $breadcrumbs = ['Cursos' => 'courses.index', 'Novo' => ''];
 
-        return view('courses.create', compact(['pageTitle', 'breadcrumbs']));
+        return view('course.create', compact(['pageTitle', 'breadcrumbs']));
     }
 
     public function store(CourseRequest $request)
@@ -52,7 +52,7 @@ class CourseController extends Controller
 
         $course = $this->courses->with('students')->find($id);
 
-        return view('courses.show', compact(['course', 'pageTitle', 'breadcrumbs']));
+        return view('course.show', compact(['course', 'pageTitle', 'breadcrumbs']));
     }
 
 
@@ -63,7 +63,7 @@ class CourseController extends Controller
 
         $course = $this->courses->find($id);
 
-        return view('courses.edit', compact(['course', 'pageTitle', 'breadcrumbs']));
+        return view('course.edit', compact(['course', 'pageTitle', 'breadcrumbs']));
     }
 
 
@@ -86,7 +86,7 @@ class CourseController extends Controller
 
         $course = $this->courses->find($id);
 
-        return view('courses.delete', compact(['course', 'pageTitle', 'breadcrumbs']));
+        return view('course.delete', compact(['course', 'pageTitle', 'breadcrumbs']));
     }
 
 
