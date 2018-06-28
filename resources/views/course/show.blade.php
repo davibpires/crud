@@ -4,23 +4,17 @@
 
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-5 offset-md-1 offset-lg-1">
-            <div class="card">
+            <div class="card card-info card-outline">
                 <div class="card-body">
                     <strong><i class="fas fa-list-ol mr-1"></i> Código</strong>
                     <p class="text-muted">{{ $course->code }}</p>
-
                     <hr>
-
                     <strong><i class="far fa-file-alt mr-1"></i> Nome</strong>
                     <p class="text-muted">{{ $course->name }}</p>
-
                     <hr>
-
                     <strong><i class="fas fa-university mr-1"></i> Instituição</strong>
                     <p class="text-muted">{{ $course->institution }}</p>
-
                     <hr>
-
                     <strong><i class="far fa-calendar-alt mr-1"></i> Cadastrado em</strong>
                     <p class="text-muted">{{ $course->created_at->format('d/m/Y \à\s H:m:s') }}</p>
                 </div>
@@ -31,7 +25,7 @@
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-5">
-            <div class="card">
+            <div class="card card-info card-outline">
                 <div class="card-header">
                     <h3 class="card-title">Estudantes</h3>
                 </div>
@@ -60,4 +54,4 @@
         </div>
     </div>
 
-@stop
+@endsection

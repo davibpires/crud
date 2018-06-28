@@ -11,12 +11,27 @@
 |
 */
 
-Route::get('/', ['as' => 'home', 'uses' => 'SiteController@index']);
+Auth::routes();
 
-// Students
-Route::resource('students', 'StudentController');
-Route::get('students/{student}/delete', ['as' => 'students.delete', 'uses' => 'StudentController@delete']);
+Route::get('/logout', 'Auth\LoginController@logout');
 
-// Courses
-Route::resource('courses', 'CourseController');
-Route::get('courses/{course}/delete', ['as' => 'courses.delete', 'uses' => 'CourseController@delete']);
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+
+    // Students
+    Route::get('students/{student}/delete', ['as' => 'students.delete', 'uses' => 'StudentController@delete']);
+    Route::resource('students', 'StudentController');
+
+    // Courses
+    Route::get('courses/{course}/delete', ['as' => 'courses.delete', 'uses' => 'CourseController@delete']);
+    Route::resource('courses', 'CourseController');
+
+    // Profile
+    Route::get('profile', ['as' => 'profile', 'uses' => 'ProfileController@show']);
+    Route::get('profile/edit', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+    Route::put('profile/update', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+    Route::get('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@editPassword']);
+    Route::post('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@changePassword']);
+
+});

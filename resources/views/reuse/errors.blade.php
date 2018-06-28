@@ -4,9 +4,9 @@
         @if ($errors->count() == 1)
             {{ $errors->first() }}
         @else
-            <ul class="ul-alert">
+            <ul class="ul-alert pl-3">
                 @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                    <li class="p-0 m-0">{{ $error }}</li>
                 @endforeach
             </ul>
         @endif

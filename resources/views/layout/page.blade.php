@@ -52,4 +52,4 @@
     </div>
     <!-- ./wrapper -->
 
-@stop
+@endsection

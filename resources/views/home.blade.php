@@ -2,6 +2,6 @@
 
 @section('content')
 
-  <h3 class="mt-5 center">Bem-vindo ao <strong>The CRUD Project</strong></h3>
+    <h3 class="mt-5 center">Bem-vindo ao <strong>The CRUD Project</strong></h3>
 
-@stop
+@endsection

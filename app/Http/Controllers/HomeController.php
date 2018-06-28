@@ -8,8 +8,7 @@
 
 namespace crud\Http\Controllers;
 
-
-class SiteController extends Controller
+class HomeController extends Controller
 {
 
     public function index()
