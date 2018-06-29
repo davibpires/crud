@@ -22,7 +22,7 @@ class CourseController extends Controller
 
         $search = \Request::get('search');
 
-        $courses = $this->courses->search()->orderBy('name')->paginate(15);
+        $courses = $this->courses->search()->orderBy('name')->orderBy('institution')->paginate(15);
 
         return view('course.index', compact(['courses', 'search', 'pageTitle', 'breadcrumbs']));
     }
